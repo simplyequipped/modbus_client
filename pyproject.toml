@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modbus_client"
+version = "1.0.0"
+description = "Simple Modbus TCP read/write CLI and library for networked slave devices"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "pymodbus>=3.6",
+]
+
+[project.scripts]
+modbus = "modbus_client.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["modbus_client*"]
